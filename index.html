@@ -1,1 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Banderas - Data Scientist | Business Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3182ce;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1a365d;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #3182ce;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3182ce;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 0.5rem;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .profile-location {
+            color: #718096;
+            margin-bottom: 1rem;
+        }
+
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .profile-link {
+            padding: 0.5rem 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .profile-link:hover {
+            background: #3182ce;
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: #1a365d;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3182ce;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 5rem 0;
+            background: #f7fafc;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3182ce;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 50%;
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            padding-left: 2rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3182ce;
+            border: 4px solid white;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            color: #3182ce;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: #718096;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-type {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #f7fafc;
+            color: #4a5568;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #3182ce;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: #718096;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #2c5aa0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: #1a365d;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #4fd1c7;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #4fd1c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item .timeline-content {
+                margin-left: 40px !important;
+                margin-right: 0 !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                text-align: left !important;
+            }
+
+            .timeline-item::before {
+                left: 20px !important;
+                transform: translateX(0) !important;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Juan Banderas</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Juan Banderas</h1>
+                    <div class="hero-subtitle">Data Scientist | Business Analyst</div>
+                    <div class="hero-description">
+                        International Commerce graduate turned Data Scientist with expertise in machine learning, business intelligence, and process optimization. Specialized in transforming complex data challenges into measurable business outcomes for retail and technology companies.
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">30%</span>
+                            <div class="stat-label">Revenue Growth</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">9</span>
+                            <div class="stat-label">ML Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">85%+</span>
+                            <div class="stat-label">Model Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="profile-image">JB</div>
+                        <div class="profile-location">📍 Morelia, Michoacán, Mexico</div>
+                        <div class="profile-links">
+                            <a href="https://www.linkedin.com/in/juan-banderas/" class="profile-link">LinkedIn</a>
+                            <a href="https://github.com/banderasjuan" class="profile-link">GitHub</a>
+                            <a href="mailto:juanbanderas387@gmail.com" class="profile-link">Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a <strong>Data Scientist and Business Analyst</strong> with a unique background combining international commerce expertise and advanced machine learning capabilities. My journey from business operations to data science has equipped me with the ability to bridge the gap between technical solutions and business impact.</p>
+                    
+                    <p>At <strong>Inlog Logistics Solutions</strong>, I've successfully led business development initiatives, achieving a 30% revenue increase while implementing data-driven process optimizations. My recent transition into data science through an intensive bootcamp at <strong>Tripleten</strong> has strengthened my technical foundation in Python, SQL, and advanced ML algorithms.</p>
+                    
+                    <p>I specialize in developing <strong>end-to-end machine learning solutions</strong> that deliver measurable ROI, from customer churn prediction systems to automated pricing engines and sentiment analysis platforms.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-category">Programming & Analytics</div>
+                        <div class="skill-list">Python, SQL, Pandas, NumPy, Scikit-learn</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-category">Machine Learning</div>
+                        <div class="skill-list">XGBoost, LightGBM, CatBoost, Ensemble Methods</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-category">Deep Learning & NLP</div>
+                        <div class="skill-list">PyTorch, TensorFlow, BERT, Transformers, spaCy</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-category">Data Visualization</div>
+                        <div class="skill-list">Matplotlib, Seaborn, Plotly, Executive Dashboards</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-category">Business Intelligence</div>
+                        <div class="skill-list">A/B Testing, Statistical Analysis, KPI Development</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-category">Process Optimization</div>
+                        <div class="skill-list">ERP Implementation, Workflow Automation, CRM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-title">Data Science Intensive Program</div>
+                        <div class="timeline-company">Tripleten Bootcamp</div>
+                        <p>Completed comprehensive data science training covering machine learning algorithms, statistical analysis, and deep learning. Developed 9 end-to-end projects across telecommunications, mining, insurance, and entertainment industries using Python, SQL, and advanced ML frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Oct 2022 - Present</div>
+                        <div class="timeline-title">Business Development Leader</div>
+                        <div class="timeline-company">Inlog Logistics Solutions</div>
+                        <p>Drive strategic growth initiatives achieving 30% revenue increase through data-driven decision making. Lead development of analytics-powered supply chain management platform, improving visibility and reducing response times while maintaining 70% customer retention rate.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2017 - Oct 2022</div>
+                        <div class="timeline-title">Operations Manager</div>
+                        <div class="timeline-company">Inlog Logistics Solutions</div>
+                        <p>Implemented ERP system achieving 35% reduction in shipment management time. Automated 40% of daily operational processes through workflow optimization, enabling resource reallocation to customer service and strategic initiatives.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2011 - 2015</div>
+                        <div class="timeline-title">International Commerce Degree</div>
+                        <div class="timeline-company">Universidad Vasco de Quiroga (UVAQ)</div>
+                        <p>Built strong foundation in business analytics, international markets, and strategic decision-making. Developed expertise in negotiation, market analysis, and cross-cultural business operations that now supports data-driven business insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Customer Churn Prediction System</div>
+                        <div class="project-type">Telecommunications | ML Engineering</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            Developed comprehensive machine learning system to predict customer churn for a telecommunications company. Implemented ensemble methods with hyperparameter optimization, achieving superior accuracy and generating actionable retention strategies.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Data Visualization</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">85%+</span>
+                                <div class="metric-label">Accuracy</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">5</span>
+                                <div class="metric-label">Algorithms</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$2M+</span>
+                                <div class="metric-label">Revenue Impact</div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/banderasjuan/Interconnnect" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Automated Vehicle Pricing Engine</div>
+                        <div class="project-type">Automotive Retail | Pricing Optimization</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            Created intelligent pricing system for used vehicle marketplace using advanced ensemble methods. Benchmarked 6 different ML algorithms to optimize both accuracy and processing speed for real-time pricing decisions.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">LightGBM</span>
+                            <span class="tech-tag">CatBoost</span>
+                            <span class="tech-tag">Feature Engineering</span>
+                            <span class="tech-tag">Model Optimization</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">90%+</span>
+                                <div class="metric-label">Time Reduction</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">6</span>
+                                <div class="metric-label">ML Models</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Real-time</span>
+                                <div class="metric-label">Processing</div>
+                            </div>
+                        </div>
+                        <a href="#" class="project-link">View Details →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">E-commerce Sentiment Analysis</div>
+                        <div class="project-type">Retail Technology | NLP</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            Built advanced sentiment analysis engine for movie review platform using BERT and Transformers. Compared 5 different approaches from classical NLP to state-of-the-art deep learning, achieving industrial-grade precision.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">spaCy</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">80%</span>
+                                <div class="metric-label">Automation</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">5</span>
+                                <div class="metric-label">Approaches</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">SOTA</span>
+                                <div class="metric-label">Performance</div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/banderasjuan/Film_junky_union" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Demand Forecasting System</div>
+                        <div class="project-type">Transportation | Time Series</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            Developed sophisticated demand prediction system for taxi services using advanced time series analysis. Implemented seasonal decomposition and stationarity tests to optimize fleet distribution and reduce customer wait times.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Time Series</span>
+                            <span class="tech-tag">Dickey-Fuller</span>
+                            <span class="tech-tag">Seasonal Decomposition</span>
+                            <span class="tech-tag">Statistical Analysis</span>
+                            <span class="tech-tag">Forecasting</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">15-30%</span>
+                                <div class="metric-label">Wait Reduction</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4</span>
+                                <div class="metric-label">ML Models</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Fleet</span>
+                                <div class="metric-label">Optimization</div>
+                            </div>
+                        </div>
+                        <a href="#" class="project-link">View Details →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Insurance Analytics Platform</div>
+                        <div class="project-type">Financial Services | Multi-Model ML</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            Built comprehensive ML solution for insurance company including customer similarity algorithms, benefit prediction models, and privacy-preserving data transformation systems for enhanced marketing and risk assessment.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">KNeighbors</span>
+                            <span class="tech-tag">Privacy Protection</span>
+                            <span class="tech-tag">Data Transformation</span>
+                            <span class="tech-tag">Regression</span>
+                            <span class="tech-tag">Multi-Model</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Multi</span>
+                                <div class="metric-label">Models</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Privacy</span>
+                                <div class="metric-label">Protected</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Smart</span>
+                                <div class="metric-label">Targeting</div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/banderasjuan/sure_tomorrow" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Production Optimization System</div>
+                        <div class="project-type">Mining & Manufacturing | Process ML</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            Developed machine learning models to optimize gold production processes and eliminate non-profitable parameters. Analyzed metal concentrations across multiple processing stages to maximize extraction efficiency and reduce operational costs.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Process Optimization</span>
+                            <span class="tech-tag">Feature Selection</span>
+                            <span class="tech-tag">Cost Analysis</span>
+                            <span class="tech-tag">Production ML</span>
+                            <span class="tech-tag">ROI Optimization</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Max</span>
+                                <div class="metric-label">Efficiency</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Multi</span>
+                                <div class="metric-label">Stage</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Cost</span>
+                                <div class="metric-label">Optimized</div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/banderasjuan/Zyfra" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-subtitle">Ready to discuss how data science can drive your business forward? Let's talk about opportunities in retail, tech, and beyond.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:juanbanderas387@gmail.com" class="contact-link">juanbanderas387@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+524435290308" class="contact-link">+52 443 529 0308</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/juan-banderas/" class="contact-link">Professional Profile</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/banderasjuan" class="contact-link">Code Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements on scroll
+        document.querySelectorAll('.timeline-content, .project-card, .skill-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Stagger animation for timeline items
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            const content = item.querySelector('.timeline-content');
+            if (content) {
+                content.style.transitionDelay = `${index * 0.2}s`;
+            }
+        });
+
+        // Stagger animation for project cards
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Counter animation for hero stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const isPercentage = target.includes('%');
+                const hasPlus = target.includes('+');
+                let numValue;
+                
+                if (target === '9') {
+                    numValue = 9;
+                } else {
+                    numValue = parseInt(target.replace(/[%+]/g, ''));
+                }
+                
+                let current = 0;
+                const increment = numValue / 30;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numValue) {
+                        current = numValue;
+                        clearInterval(timer);
+                    }
+                    
+                    let displayValue = Math.floor(current);
+                    if (isPercentage) displayValue += '%';
+                    if (hasPlus) displayValue += '+';
+                    
+                    counter.textContent = displayValue;
+                }, 50);
+            });
+        }
+
+        // Trigger counter animation when hero stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) {
+            statsObserver.observe(heroStats);
+        }
+
+        // Add hover effect to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px) scale(1)';
+            });
+        });
+
+        // Add typing effect to hero title (optional)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Mobile menu toggle (for future enhancement)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+
+        // Add mobile menu styles when needed
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .nav-links.mobile-open {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.98);
+                    backdrop-filter: blur(20px);
+                    padding: 1rem 0;
+                    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+                }
+                
+                .mobile-menu-button {
+                    display: block;
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    color: #4a5568;
+                    cursor: pointer;
+                }
+                
+                @media (min-width: 769px) {
+                    .mobile-menu-button {
+                        display: none;
+                    }
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
