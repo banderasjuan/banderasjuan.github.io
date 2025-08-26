@@ -100,11 +100,6 @@
             gap: var(--space-xs);
         }
 
-        .logo::before {
-            content: '🔬';
-            font-size: var(--font-size-2xl);
-        }
-
         .nav-links {
             display: flex;
             list-style: none;
@@ -148,7 +143,7 @@
             cursor: pointer;
         }
 
-        /* Enhanced Hero Section */
+        /* Streamlined Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -197,14 +192,6 @@
             color: var(--secondary-blue);
             font-weight: 600;
             margin-bottom: var(--space-md);
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-
-        .hero-subtitle::before {
-            content: '💡';
-            font-size: var(--font-size-lg);
         }
 
         .hero-description {
@@ -223,22 +210,6 @@
             border-left: 4px solid var(--accent-orange);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero-highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
         }
 
         .cta-buttons {
@@ -299,48 +270,21 @@
             backdrop-filter: blur(10px);
         }
 
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            border-radius: var(--radius-xl);
-            z-index: -1;
-        }
-
         .profile-image {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-orange));
             margin: 0 auto var(--space-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--font-size-3xl);
-            color: white;
-            font-weight: bold;
             position: relative;
             overflow: hidden;
+            border: 4px solid var(--accent-orange);
         }
 
-        .profile-image::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: rotate 4s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .profile-contact {
@@ -363,20 +307,11 @@
         }
 
         .contact-item .icon-emoji {
-            font-size: 14px;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-blue);
-            color: white;
-            border-radius: 50%;
-            flex-shrink: 0;
-            font-family: Arial, sans-serif;
+            font-size: var(--font-size-base);
+            color: var(--secondary-blue);
             font-weight: bold;
+            min-width: 20px;
             text-align: center;
-            line-height: 1;
         }
 
         .contact-item:hover {
@@ -478,12 +413,6 @@
             border-color: var(--secondary-blue);
         }
 
-        .expertise-icon {
-            font-size: var(--font-size-3xl);
-            margin-bottom: var(--space-md);
-            display: block;
-        }
-
         .expertise-title,
         .competencia-title {
             font-size: var(--font-size-xl);
@@ -575,24 +504,6 @@
             padding: var(--space-xl);
             position: relative;
             overflow: hidden;
-        }
-
-        .project-header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            transform: translate(30px, -30px);
-        }
-
-        .project-emoji {
-            font-size: var(--font-size-3xl);
-            margin-bottom: var(--space-xs);
-            display: block;
         }
 
         .project-title {
@@ -791,6 +702,58 @@
             font-size: 0.75rem;
         }
 
+        /* Value Proposition Section */
+        .value-prop {
+            padding: var(--space-2xl) 0;
+            background: var(--light-gray);
+        }
+
+        .experience-intro {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .experience-highlight {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience-advantages h4 {
+            color: var(--dark-navy);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .advantage-item .icon {
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: var(--font-size-lg);
+        }
+
         /* Enhanced Contact Section */
         .contact {
             padding: var(--space-2xl) 0;
@@ -816,31 +779,16 @@
             overflow: hidden;
         }
 
-        .contact-method::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(245, 158, 11, 0.05));
-            z-index: 1;
-        }
-
-        .contact-method > * {
-            position: relative;
-            z-index: 2;
-        }
-
         .contact-method:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
         }
 
-        .contact-icon {
-            font-size: var(--font-size-3xl);
-            margin-bottom: var(--space-md);
+        .contact-method .contact-icon {
+            font-size: var(--font-size-2xl);
             color: var(--secondary-blue);
+            margin-bottom: var(--space-md);
+            display: block;
         }
 
         .contact-method h3 {
@@ -917,71 +865,30 @@
                 transform: translateX(0) !important;
             }
 
-            /* Value Proposition Mobile */
-            .value-sections {
+            .advantages-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0 1rem;
+                gap: var(--space-md);
             }
 
-            .value-section {
-                padding: 2rem;
-            }
-
-            .differentiator-highlight {
-                transform: scale(1);
-                margin: 2rem auto;
-                padding: 2rem;
-            }
-
-            .differentiator-title {
-                font-size: 2rem;
-            }
-
-            .differentiator-text {
-                font-size: 1.1rem;
-            }
-
-            /* Mobile responsive for new side-by-side layout */
-            .value-prop div[style*="grid-template-columns: 1fr 1fr"] {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
+            .experience-highlight {
+                padding: var(--space-lg);
             }
         }
 
-        /* Animation classes */
+        /* Simple animations only */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
         }
 
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Loading animation */
-        .loading-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 9999;
-        }
-
-        .loading-bar.complete {
-            transform: translateX(0);
-        }
     </style>
 </head>
 <body>
-    <div class="loading-bar" id="loadingBar"></div>
-    
     <header>
         <div class="container">
             <nav>
@@ -1006,51 +913,56 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hello! I'm Juan Banderas</h1>
-                    <div class="hero-subtitle">Data Scientist & Business Analyst</div>
+                    <h1>Data Scientist Who Speaks Business</h1>
+                    <div class="hero-subtitle">10+ Years Business Experience + Advanced ML Expertise</div>
                     <div class="hero-description">
-                        Data scientist with over a decade of business experience in marketing, operations, and sales. My natural curiosity and passion for learning led me to make a strategic transition to data science, combining deep business knowledge with advanced technical expertise.
+                        Most data scientists build technically sound models. I build models that actually get implemented and drive revenue because I understand the business context where they'll live.
                         <br><br>
-                        This unique trajectory allows me to translate real business problems into effective technical solutions - because I've lived those problems from the inside for years.
+                        I've spent a decade in marketing, operations, and sales before transitioning to data science. This means I don't just solve technical problems - I solve the right business problems with the right technical approach.
                     </div>
                     <div class="hero-highlight">
-                        <strong>💡 My key differentiator:</strong> I don't just build models that work technically, but I understand exactly how and why they must integrate into real operations to generate value.
+                        <strong>My differentiator:</strong> I translate business pain into technical solutions because I've lived that pain from the inside.
                     </div>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn-primary">
-                            🚀 View Projects
+                            View Projects
+                        </a>
+                        <a href="./Juan_Banderas_CV.pdf" class="btn-secondary" download>
+                            Download CV
                         </a>
                         <a href="#contact" class="btn-secondary">
-                            ✉️ Contact Me
+                            Contact Me
                         </a>
                     </div>
                 </div>
                 <div class="hero-card">
-                    <div class="profile-image">JB</div>
+                    <div class="profile-image">
+                        <img src="./profile-photo.jpg" alt="Juan Banderas">
+                    </div>
                     <h3>Data Scientist</h3>
                     <div class="profile-contact">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                            <div class="icon-emoji">✉️</div>
                             <a href="mailto:juanbanderas387@gmail.com" class="contact-link">juanbanderas387@gmail.com</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
+                            <div class="icon-emoji">📱</div>
                             <a href="tel:+524435290308" class="contact-link">+52 443 529 0308</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
+                            <div class="icon-emoji">💼</div>
                             <a href="https://www.linkedin.com/in/juan-banderas/" class="contact-link">LinkedIn</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-github"></i>
+                            <div class="icon-emoji">💻</div>
                             <a href="https://github.com/banderasjuan" class="contact-link">GitHub</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-language"></i>
+                            <div class="icon-emoji">🌐</div>
                             <span>English C1 Advanced</span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="icon-emoji">📍</div>
                             <span>Morelia, México</span>
                         </div>
                     </div>
@@ -1066,47 +978,42 @@
             
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <span class="expertise-icon">🌐</span>
-                    <h3 class="expertise-title">CROSS-INDUSTRY EXPERIENCE</h3>
-                    <ul class="expertise-list">
-                        <li>360° Vision: Marketing → Operations → Sales → Data Science</li>
-                        <li>Technical adaptability: Rapid adjustment of ML approaches by specific industry</li>
-                        <li>Deep understanding of KPIs and challenges by sector</li>
-                        <li>Business context in every model design</li>
-                        <li>Diverse sectors: Mining, technology, retail, insurance, telecommunications, logistics</li>
-                    </ul>
-                </div>
-
-                <div class="expertise-card">
-                    <span class="expertise-icon">🤖</span>
                     <h3 class="expertise-title">MACHINE LEARNING & PREDICTIVE ANALYTICS</h3>
                     <ul class="expertise-list">
-                        <li>Classification Models: Churn prediction, sentiment analysis, fraud detection</li>
-                        <li>Regression Models: Pricing optimization, demand forecasting, revenue prediction</li>
-                        <li>Advanced Algorithms: XGBoost, LightGBM, CatBoost, ensemble methods</li>
-                        <li>Optimization: Hyperparameter tuning, cross-validation, bootstrapping</li>
+                        <li>Classification: Churn prediction, sentiment analysis, fraud detection</li>
+                        <li>Regression: Pricing optimization, demand forecasting</li>
+                        <li>Advanced Algorithms: XGBoost, LightGBM, CatBoost</li>
+                        <li>Model Optimization: Hyperparameter tuning, cross-validation</li>
                     </ul>
                 </div>
 
                 <div class="expertise-card">
-                    <span class="expertise-icon">🧠</span>
                     <h3 class="expertise-title">DEEP LEARNING & NLP</h3>
                     <ul class="expertise-list">
-                        <li>Transformers & BERT: Sentiment analysis, text classification</li>
-                        <li>Frameworks: PyTorch, TensorFlow for custom implementations</li>
-                        <li>Classical NLP: NLTK, spaCy, advanced feature engineering</li>
-                        <li>Processing: Tokenization, lemmatization, vectorization</li>
+                        <li>Transformers & BERT for text classification</li>
+                        <li>PyTorch, TensorFlow implementations</li>
+                        <li>Classical NLP: NLTK, spaCy processing</li>
+                        <li>Advanced feature engineering</li>
                     </ul>
                 </div>
 
                 <div class="expertise-card">
-                    <span class="expertise-icon">📊</span>
                     <h3 class="expertise-title">DATA ENGINEERING & ANALYSIS</h3>
                     <ul class="expertise-list">
-                        <li>Languages: Python (expert), SQL (advanced)</li>
+                        <li>Python (expert), SQL (advanced)</li>
                         <li>Core Libraries: Pandas, NumPy, Scikit-learn</li>
-                        <li>Visualization: Matplotlib, Seaborn, Plotly for executive insights</li>
-                        <li>Statistics: A/B testing, statistical significance, hypothesis testing</li>
+                        <li>Visualization: Matplotlib, Seaborn, Plotly</li>
+                        <li>Statistics: A/B testing, hypothesis testing</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="expertise-title">BUSINESS INTEGRATION</h3>
+                    <ul class="expertise-list">
+                        <li>Cross-industry experience: Mining, tech, retail, telecom</li>
+                        <li>Problem translation: Business needs to technical solutions</li>
+                        <li>ROI-focused model design</li>
+                        <li>Executive communication</li>
                     </ul>
                 </div>
             </div>
@@ -1120,7 +1027,7 @@
             
             <div class="tech-categories">
                 <div class="tech-category">
-                    <h3>🧠 MACHINE LEARNING & AI</h3>
+                    <h3>MACHINE LEARNING & AI</h3>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Scikit-learn</span>
@@ -1132,7 +1039,7 @@
                 </div>
 
                 <div class="tech-category">
-                    <h3>🗣️ NLP & DEEP LEARNING</h3>
+                    <h3>NLP & DEEP LEARNING</h3>
                     <div class="tech-tags">
                         <span class="tech-tag">BERT</span>
                         <span class="tech-tag">Transformers</span>
@@ -1144,7 +1051,7 @@
                 </div>
 
                 <div class="tech-category">
-                    <h3>📊 DATA ANALYSIS & VISUALIZATION</h3>
+                    <h3>DATA ANALYSIS & VISUALIZATION</h3>
                     <div class="tech-tags">
                         <span class="tech-tag">Pandas</span>
                         <span class="tech-tag">NumPy</span>
@@ -1156,7 +1063,7 @@
                 </div>
 
                 <div class="tech-category">
-                    <h3>💼 BUSINESS INTELLIGENCE</h3>
+                    <h3>BUSINESS INTELLIGENCE</h3>
                     <div class="tech-tags">
                         <span class="tech-tag">Statistical Analysis</span>
                         <span class="tech-tag">A/B Testing</span>
@@ -1175,24 +1082,24 @@
             
             <div class="competencias-grid">
                 <div class="competencia-card">
-                    <h3 class="competencia-title">💻 TECHNICAL SKILLS</h3>
+                    <h3 class="competencia-title">TECHNICAL SKILLS</h3>
                     <ul class="competencia-list">
-                        <li>End-to-End ML Projects: From problem definition to production deployment</li>
+                        <li>End-to-End ML Projects: Problem definition to production deployment</li>
                         <li>Algorithm Selection: Deep understanding of when/why to use specific models</li>
                         <li>Model Validation: Cross-validation, bootstrapping, hold-out testing</li>
-                        <li>Performance Optimization: Balancing accuracy, speed, and interpretability</li>
-                        <li>Feature Engineering: Domain expertise + automated feature selection</li>
+                        <li>Performance Optimization: Balancing accuracy, speed, interpretability</li>
+                        <li>Feature Engineering: Domain expertise + automated selection</li>
                         <li>Code Quality: Clean, documented, reproducible analysis</li>
                     </ul>
                 </div>
 
                 <div class="competencia-card">
-                    <h3 class="competencia-title">💼 BUSINESS ACUMEN</h3>
+                    <h3 class="competencia-title">BUSINESS ACUMEN</h3>
                     <ul class="competencia-list">
                         <li>Problem Translation: Converting business needs into technical requirements</li>
                         <li>ROI Focus: Ensuring ML solutions generate measurable business value</li>
-                        <li>Stakeholder Communication: Explaining technical concepts to non-technical audiences</li>
-                        <li>Project Management: Delivering complex projects on time and within scope</li>
+                        <li>Stakeholder Communication: Explaining technical concepts clearly</li>
+                        <li>Project Management: Delivering complex projects on time and scope</li>
                     </ul>
                 </div>
             </div>
@@ -1207,9 +1114,8 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <span class="project-emoji">🔬</span>
-                        <div class="project-title">INTERCONNECT - Customer Churn Prediction</div>
-                        <div class="project-problem">Predict cancellations in telecommunications company for proactive retention</div>
+                        <div class="project-title">Customer Churn Prediction</div>
+                        <div class="project-problem">Predict cancellations in telecommunications for proactive retention</div>
                     </div>
                     <div class="project-content">
                         <div class="project-section">
@@ -1221,25 +1127,23 @@
                                 <span class="project-tech-tag">GridSearchCV</span>
                             </div>
                             <ul style="list-style: none; padding-left: 0;">
-                                <li>• Data Pipeline: Cleaning, feature engineering, missing values treatment</li>
-                                <li>• Model Selection: Comparison of 5 algorithms (Logistic Regression, Random Forest, XGBoost)</li>
-                                <li>• Optimization: GridSearchCV for hyperparameter tuning</li>
-                                <li>• Evaluation: Precision, Recall, F1-score, ROC-AUC analysis + executive dashboard</li>
+                                <li>Data Pipeline: Cleaning, feature engineering, missing values treatment</li>
+                                <li>Model Comparison: 5 algorithms (Logistic Regression, Random Forest, XGBoost)</li>
+                                <li>Optimization: GridSearchCV for hyperparameter tuning</li>
                             </ul>
                         </div>
                         <div class="project-results">
-                            <strong>Results:</strong> +85% accuracy, productionized model with actionable recommendations
+                            <strong>Results:</strong> 85%+ accuracy, productionized model with actionable recommendations
                         </div>
                         <a href="https://github.com/banderasjuan/Interconnnect" class="project-link">
-                            🔗 View Project
+                            View Project
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <span class="project-emoji">🚗</span>
-                        <div class="project-title">RUSTY BARGAIN - Automated Vehicle Pricing</div>
+                        <div class="project-title">Automated Vehicle Pricing</div>
                         <div class="project-problem">Automate used vehicle valuation while maintaining high precision</div>
                     </div>
                     <div class="project-content">
@@ -1252,26 +1156,24 @@
                                 <span class="project-tech-tag">Ensemble</span>
                             </div>
                             <ul style="list-style: none; padding-left: 0;">
-                                <li>• Feature Engineering: Categorical encoding, numerical scaling</li>
-                                <li>• Model Ensemble: XGBoost, LightGBM, CatBoost comparison</li>
-                                <li>• Performance Optimization: Speed vs accuracy tradeoff analysis</li>
-                                <li>• Benchmarking: 6 ML algorithms systematically compared</li>
+                                <li>Feature Engineering: Categorical encoding, numerical scaling</li>
+                                <li>Model Ensemble: XGBoost, LightGBM, CatBoost comparison</li>
+                                <li>Performance Optimization: Speed vs accuracy tradeoff analysis</li>
                             </ul>
                         </div>
                         <div class="project-results">
                             <strong>Results:</strong> 90%+ processing time reduction, optimized RMSE for precision pricing
                         </div>
                         <a href="https://github.com/banderasjuan/rusty_bargain" class="project-link">
-                            🔗 View Project
+                            View Project
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <span class="project-emoji">🎬</span>
-                        <div class="project-title">FILM JUNKY UNION - Advanced Sentiment Analysis</div>
-                        <div class="project-problem">Automatic sentiment classification in movie reviews (positive/negative)</div>
+                        <div class="project-title">Advanced Sentiment Analysis</div>
+                        <div class="project-problem">Automatic sentiment classification in movie reviews</div>
                     </div>
                     <div class="project-content">
                         <div class="project-section">
@@ -1283,104 +1185,78 @@
                                 <span class="project-tech-tag">NLTK</span>
                             </div>
                             <ul style="list-style: none; padding-left: 0;">
-                                <li>• NLP Pipeline: Text preprocessing, lemmatization (NLTK + spaCy)</li>
-                                <li>• Model Comparison: BERT/Transformers vs TF-IDF + classical ML</li>
-                                <li>• Deep Learning: PyTorch implementation for BERT fine-tuning</li>
-                                <li>• Evaluation: Confusion matrix, classification report, error analysis</li>
+                                <li>NLP Pipeline: Text preprocessing, lemmatization (NLTK + spaCy)</li>
+                                <li>Model Comparison: BERT/Transformers vs TF-IDF + classical ML</li>
+                                <li>Deep Learning: PyTorch implementation for BERT fine-tuning</li>
                             </ul>
                         </div>
                         <div class="project-results">
                             <strong>Results:</strong> Industrial-grade accuracy, 80% reduction in manual process
                         </div>
                         <a href="https://github.com/banderasjuan/Film_junky_union" class="project-link">
-                            🔗 View Project
+                            View Project
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <span class="project-emoji">⛏️</span>
-                        <div class="project-title">ZYFRA - Gold Production Optimization</div>
-                        <div class="project-problem">Optimize gold extraction process by eliminating unprofitable parameters</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Technical Solution</h4>
-                            <div class="project-tech">
-                                <span class="project-tech-tag">Time Series</span>
-                                <span class="project-tech-tag">Regression</span>
-                                <span class="project-tech-tag">Feature Selection</span>
-                                <span class="project-tech-tag">ROI Analysis</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li>• Time Series Analysis: Concentration analysis by production stage</li>
-                                <li>• Predictive Modeling: Regression to predict gold yield</li>
-                                <li>• Feature Selection: Identification of critical vs redundant variables</li>
-                                <li>• Process Optimization: ROI analysis of operational parameters</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Results:</strong> Optimization of production processes and operational profitability
-                        </div>
-                        <a href="https://github.com/banderasjuan/Zyfra" class="project-link">
-                            🔗 View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-emoji">🏦</span>
-                        <div class="project-title">SURE TOMORROW - Insurance ML Suite</div>
-                        <div class="project-problem">Multiple ML use cases for insurance company</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-section">
-                            <h4>Technical Solutions</h4>
-                            <div class="project-tech">
-                                <span class="project-tech-tag">KNN</span>
-                                <span class="project-tech-tag">Privacy Protection</span>
-                                <span class="project-tech-tag">Regression</span>
-                                <span class="project-tech-tag">Multi-Model</span>
-                            </div>
-                            <ul style="list-style: none; padding-left: 0;">
-                                <li>• Customer Similarity: KNN for marketing segmentation</li>
-                                <li>• Risk Prediction: Probabilistic models for insurance claims</li>
-                                <li>• Privacy Protection: Data obfuscation algorithms preserving model performance</li>
-                                <li>• Regression Analysis: Claims frequency prediction</li>
-                            </ul>
-                        </div>
-                        <div class="project-results">
-                            <strong>Results:</strong> Complete ML suite maintaining data privacy
-                        </div>
-                        <a href="https://github.com/banderasjuan/sure_tomorrow" class="project-link">
-                            🔗 View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-emoji">📈</span>
-                        <div class="project-title">OTHER TECHNICAL PROJECTS</div>
+                        <div class="project-title">Additional Projects</div>
                         <div class="project-problem">Diverse portfolio of ML solutions</div>
                     </div>
                     <div class="project-content">
                         <div class="project-section">
-                            <h4>Additional Projects</h4>
+                            <h4>Portfolio Overview</h4>
                             <ul style="list-style: none; padding-left: 0;">
-                                <li>• <strong>Sweet Lift Taxi:</strong> Time series forecasting for demand prediction</li>
-                                <li>• <strong>Beta Bank:</strong> Customer segmentation and risk analysis</li>
-                                <li>• <strong>Megaline:</strong> Revenue optimization through plan recommendation</li>
+                                <li><strong>Gold Production Optimization:</strong> Time series forecasting for mining operations</li>
+                                <li><strong>Insurance ML Suite:</strong> Risk prediction, customer similarity, privacy protection</li>
+                                <li><strong>Time Series Forecasting:</strong> Demand prediction for taxi services</li>
                             </ul>
                         </div>
                         <div class="project-results">
                             <strong>Impact:</strong> Each project designed to solve specific business problems with clear success metrics
                         </div>
                         <a href="https://github.com/banderasjuan" class="project-link">
-                            🔗 View Complete Portfolio
+                            View Complete Portfolio
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-prop">
+        <div class="container">
+            <h2 class="section-title">My Value Proposition</h2>
+            <p class="section-subtitle">Why choose a Data Scientist with business experience?</p>
+            
+            <div class="experience-intro">
+                <div class="experience-highlight">
+                    <strong>PROFESSIONAL TRANSITION CONTEXT</strong>
+                    <div style="font-size: var(--font-size-lg); margin-top: var(--space-xs); opacity: 0.95;">
+                        10+ years in marketing, operations and sales before transitioning to data science
+                    </div>
+                </div>
+                
+                <div class="experience-advantages">
+                    <h4>This extensive business experience is my competitive advantage as a Data Scientist:</h4>
+                    <div class="advantages-grid">
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I understand the context where my models will be implemented</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I know the real pain points that data must solve</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I speak the business language to communicate technical insights</span>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="icon">✓</div>
+                            <span>I know which metrics really matter for each stakeholder</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1389,45 +1265,7 @@
 
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Executive Experience</h2>
-            <div class="experience-intro">
-                <div class="experience-highlight">
-                    🚀 <strong>PROFESSIONAL TRANSITION CONTEXT</strong>
-                    <div style="font-size: var(--font-size-lg); margin-top: var(--space-xs); opacity: 0.95;">
-                        +10 years in marketing, operations and sales (Logistics & Transportation)
-                    </div>
-                </div>
-                
-                <div class="experience-advantages">
-                    <h4>This extensive business experience is my competitive advantage as a Data Scientist:</h4>
-                    <div class="advantages-grid">
-                        <div class="advantage-item">
-                            <div class="icon">
-                                ✓
-                            </div>
-                            <span>I understand the context where my models will be implemented</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">
-                                ✓
-                            </div>
-                            <span>I know the real pain points that data must solve</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">
-                                ✓
-                            </div>
-                            <span>I speak the business language to communicate technical insights</span>
-                        </div>
-                        <div class="advantage-item">
-                            <div class="icon">
-                                ✓
-                            </div>
-                            <span>I know which metrics really matter for each stakeholder</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">Professional Experience</h2>
             
             <div class="timeline">
                 <div class="timeline-item">
@@ -1445,9 +1283,8 @@
                         <div class="timeline-title">Business Development Leader</div>
                         <div class="timeline-company">Inlog Logistics Solutions</div>
                         <ul class="timeline-achievements">
-                            <li>Application of advanced analytics to identify growth opportunities</li>
-                            <li>+30% revenue growth through data-driven business development</li>
-                            <li>Implementation of supply chain analytics platform improving visibility and control</li>
+                            <li>30%+ revenue growth through data-driven business development</li>
+                            <li>Implementation of supply chain analytics platform</li>
                             <li>70% customer retention through value-added strategies</li>
                         </ul>
                     </div>
@@ -1459,10 +1296,9 @@
                         <div class="timeline-title">Operations Manager</div>
                         <div class="timeline-company">Inlog Logistics</div>
                         <ul class="timeline-achievements">
-                            <li>40% process automation using critical operational data analysis</li>
-                            <li>35% efficiency improvement implementing optimized management systems</li>
+                            <li>40% process automation using operational data analysis</li>
+                            <li>35% efficiency improvement implementing optimized systems</li>
                             <li>Digital transformation of traditional workflows</li>
-                            <li>Process mining and optimization of critical workflows</li>
                         </ul>
                     </div>
                 </div>
@@ -1482,83 +1318,6 @@
         </div>
     </section>
 
-    <section class="value-prop">
-        <div class="container">
-            <h2 class="section-title" style="color: #1e293b;">My Value Proposition</h2>
-            <p class="section-subtitle" style="color: #64748b; margin-bottom: 3rem;">Why choose a Data Scientist with business experience?</p>
-            
-            <div style="max-width: 1200px; margin: 0 auto;">
-                
-                <!-- Side by side sections -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
-                    
-                    <!-- For companies seeking -->
-                    <div style="background: white; border-radius: 1rem; border: 1px solid #e2e8f0; padding: 2.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
-                        <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; color: #1e40af; border-bottom: 2px solid #e0e7ff; padding-bottom: 0.75rem;">
-                            <span>🔍</span>
-                            <span>For companies seeking:</span>
-                        </div>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">🧠</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Data scientists who understand real business context (not just algorithms)</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">🔧</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Professionals who have lived operational pain points from the inside</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">🚀</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Solutions that successfully implement in real operations (not just pretty models)</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">👥</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Leaders who can communicate between technical and executive teams</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- I bring -->
-                    <div style="background: white; border-radius: 1rem; border: 1px solid #e2e8f0; padding: 2.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
-                        <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; color: #1e40af; border-bottom: 2px solid #e0e7ff; padding-bottom: 0.75rem;">
-                            <span>⭐</span>
-                            <span>I bring:</span>
-                        </div>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">🏆</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">+10 years of business experience in marketing, sales and operations before becoming technical</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">🏭</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Proven cross-industry perspective across multiple sectors and problem types</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">📈</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Track record of ML projects that generate measurable impact</span>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; border-radius: 0.5rem; background: #f8fafc;">
-                                <span style="font-size: 1.1rem; width: 24px; text-align: center; margin-top: 2px;">🏅</span>
-                                <span style="color: #374151; line-height: 1.6; font-size: 0.95rem;">Successful transition from traditional executive to specialized data scientist</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Differentiator Section -->
-                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 0.75rem; padding: 2rem; text-align: center; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); border: 1px solid #3b82f6; max-width: 800px; margin: 0 auto;">
-                    <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: white; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                        <span>⚡</span>
-                        <span>My unique differentiator:</span>
-                    </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6; color: white; font-weight: 500; max-width: 700px; margin: 0 auto;">I've been where your company is now, I know exactly what you need data to solve.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Ready to Transform Data into Impact?</h2>
@@ -1566,44 +1325,33 @@
             
             <div class="contact-grid">
                 <div class="contact-method">
-                    <div class="contact-icon">
-                        📧
-                    </div>
+                    <div class="contact-icon">📧</div>
                     <h3>Email</h3>
                     <a href="mailto:juanbanderas387@gmail.com">juanbanderas387@gmail.com</a>
                 </div>
                 
                 <div class="contact-method">
-                    <div class="contact-icon">
-                        📱
-                    </div>
+                    <div class="contact-icon">📱</div>
                     <h3>Phone</h3>
                     <a href="tel:+524435290308">+52 443 529 0308</a>
                 </div>
                 
                 <div class="contact-method">
-                    <div class="contact-icon">
-                        💻
-                    </div>
+                    <div class="contact-icon">💻</div>
                     <h3>Complete Portfolio</h3>
                     <a href="https://github.com/banderasjuan">github.com/banderasjuan</a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📄</div>
+                    <h3>Download CV</h3>
+                    <a href="./Juan_Banderas_CV.pdf" download>Get Full Resume (PDF)</a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Page loading animation
-        window.addEventListener('load', () => {
-            const loadingBar = document.getElementById('loadingBar');
-            if (loadingBar) {
-                loadingBar.classList.add('complete');
-                setTimeout(() => {
-                    loadingBar.style.display = 'none';
-                }, 300);
-            }
-        });
-
         // Smooth scrolling with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1620,7 +1368,6 @@
         });
 
         // Enhanced header scroll effect
-        let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (header) {
@@ -1633,40 +1380,30 @@
                     header.style.background = 'rgba(255, 255, 255, 0.95)';
                     header.style.boxShadow = 'none';
                 }
-
-                // Hide/show header on scroll
-                if (scrollTop > lastScrollTop && scrollTop > 200) {
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    header.style.transform = 'translateY(0)';
-                }
-                lastScrollTop = scrollTop;
             }
         });
 
-        // Enhanced Intersection Observer for animations
+        // Simple Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
         // Observe all animatable elements
-        document.querySelectorAll('.expertise-card, .tech-category, .competencia-card, .project-card, .timeline-item, .value-card, .contact-method').forEach(el => {
+        document.querySelectorAll('.expertise-card, .tech-category, .competencia-card, .project-card, .timeline-item, .contact-method, .advantage-item').forEach(el => {
             el.classList.add('animate-on-scroll');
             observer.observe(el);
         });
 
-        // Enhanced mobile menu with animation
+        // Mobile menu functionality
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
         let menuOpen = false;
@@ -1686,7 +1423,7 @@
                     navLinks.style.padding = '1rem';
                     navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
                     navLinks.style.borderRadius = '0 0 12px 12px';
-                    navLinks.style.animation = 'slideDown 0.3s ease';
+                    navLinks.style.zIndex = '999';
                     mobileMenu.innerHTML = '<span>✕</span>';
                 } else {
                     navLinks.style.display = 'none';
@@ -1724,79 +1461,9 @@
             });
         }
 
-        // Add CSS animation keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Add parallax effect to hero section (optional, can be disabled if causing issues)
-        let ticking = false;
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.1; // Reduced for better performance
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        });
-
-        // Typing effect for hero title (optional - can be disabled)
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroTitle = document.querySelector('.hero-text h1');
-            if (heroTitle) {
-                const text = heroTitle.textContent;
-                heroTitle.textContent = '';
-                let i = 0;
-                
-                function typeWriter() {
-                    if (i < text.length) {
-                        heroTitle.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 50); // Faster typing
-                    }
-                }
-                
-                // Start typing effect after a shorter delay
-                setTimeout(typeWriter, 500);
-            }
-        });
-
         // Error handling for any missing elements
         window.addEventListener('error', (e) => {
             console.warn('Non-critical error handled:', e.message);
-        });
-
-        // Ensure all animations work properly
-        document.addEventListener('DOMContentLoaded', () => {
-            // Re-check for elements that might load later
-            setTimeout(() => {
-                const elementsToAnimate = document.querySelectorAll('.expertise-card, .tech-category, .competencia-card, .project-card, .timeline-item, .comparison-card, .contact-method');
-                elementsToAnimate.forEach(el => {
-                    if (!el.classList.contains('animate-on-scroll')) {
-                        el.classList.add('animate-on-scroll');
-                        observer.observe(el);
-                    }
-                });
-            }, 100);
         });
     </script>
 </body>
